@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Sipenari </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+	<!-----Header----->
+	<<header>
+		<a href="#" class="logo"><span>Sipe</span>nari</a>
+		<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+		<ul class="navigation">
+			<li><a href="#banner"><strong>Home</strong></a></li>
+			<li><a href="#deteksi-tari"><strong>Deteksi Tari</strong></a></li>
+			<li><a href="#tari-bali"><strong>Tari Bali</strong></a></li>
+		</ul>
+	</header>	
+	<!-----end Header------>
+
+	<!-- Detail Section -->
+    <section id="banner">
+        <div class="banner-container">
+            <img src="/uploads/<%= tari.gambar_banner %>" alt="Banner Tari Bali" class="banner-img">
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="gallery">
+            <img src="/uploads/<%= tari.gambar_banner %>" class="small-img">
+            <img src="/uploads/<%= tari.gambar_banner %>" class="small-img">
+            <img src="/uploads/<%= tari.gambar_banner %>" class="small-img">
+            <img src="/uploads/<%= tari.gambar_banner %>" class="small-img">
+        </div>
+    </section>
+
+    <!-- Description Section -->
+    <section class="description-section">
+		<div class="description">
+			<h1><%= tari.nama_tari %></h1>
+			<p class="description-text">
+				<%= tari.desc_lengkap %>
+			</p>
+			<ul>
+				<li><strong>Asal:</strong> <%= tari.asal %></li>
+				<li><strong>Jenis Tarian:</strong> <%= tari.jenis %></li>
+				<% if (tari.tokoh_penting) { %>
+					<li><strong>Tokoh Penting:</strong> <%= tari.tokoh_penting %></li>
+				<% } %>
+			</ul>
+		</div>
+	</section>
+	
+
+    <footer>
+		<div class="container">
+			<div class="sec aboutus">
+				<h2>Tentang Saya</h2>
+				<div class="profile">
+					<img src="../assets/profile.jpg" alt="Profile Photo" class="profile-photo">
+					<div>
+						<p>Hai, saya Anak Agung Gede Ari Saputra! Saya sangat tertarik dengan budaya Bali, terutama tarian tradisionalnya. Di platform ini, saya ingin berbagi keindahan dan kekayaan warisan budaya Bali dengan semua orang dengan menggunakan AI untuk mengklasifikasikan beberapa tari Bali. Ayo, terhubung dengan saya di media sosial untuk mengenal saya lebih dekat!
+						</p>
+						<ul class="sci">
+							<li><a href="https://www.facebook.com/gung.ary.399"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+							<li><a href="https://www.instagram.com/gungdeari_/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							<li><a href="https://www.linkedin.com/in/agungarisaputra"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+							<li><a href="https://www.github.com/gungdeari"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>	
+	
+
+	<script type="text/javascript">
+		window.addEventListener('scroll', function(){
+			const header = document.querySelector('header');
+			header.classList.toggle("sticky", window.scrollY > 0);
+		});
+	</script>
+
+</body>

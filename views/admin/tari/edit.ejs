@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Data Tari</title>
+    <!-- <link rel="stylesheet" type="text/css" href="/css/style.css"> -->
+    <style>
+        /* Reset CSS untuk menghilangkan margin dan padding default */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #444;
+            text-align: center;
+        }
+
+        form {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+            margin: 20px auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="file"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus {
+            border-color: #218838; /* Warna biru saat fokus */
+            outline: none; /* Menghilangkan outline default */
+        }
+
+        textarea {
+            resize: vertical; /* Izinkan resize vertikal */
+            height: 120px; /* Tinggi default textarea */
+        }
+
+        button {
+            background-color: #218838; /* Warna biru untuk tombol */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            width: 100%; /* Membuat tombol mengisi lebar penuh */
+        }
+
+        button:hover {
+            background-color: #155724; /* Warna biru lebih gelap saat hover */
+        }
+
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #218838;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #155724; /* Warna biru lebih gelap saat hover */
+        }
+
+        /* Gaya untuk gambar banner */
+        img {
+            max-width: 100%; 
+            height: auto;
+            border-radius: 4px; 
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container-edit-admin">
+        <h1 class="edit-data">Edit Data Tari</h1>
+
+        <form action="/admin/tari/update/<%= tari.id %>" method="POST" enctype="multipart/form-data" class="form-update">
+            <label>Nama Tari:</label>
+            <input type="text" name="nama_tari" value="<%= tari.nama_tari %>" required>
+
+            <label>Asal:</label>
+            <input type="text" name="asal" value="<%= tari.asal %>" required>
+
+            <label>Jenis:</label>
+            <input type="text" name="jenis" value="<%= tari.jenis %>" required>
+
+            <label>Deskripsi Singkat:</label>
+            <input type="text" name="desc_singkat" value="<%= tari.desc_singkat %>" required>
+
+            <label>Deskripsi Lengkap:</label>
+            <textarea name="desc_lengkap"><%= tari.desc_lengkap %></textarea>
+
+            <label>Gambar Banner:</label>
+            <input type="file" name="gambar_banner" accept="image/*">
+            <p>Current Image: <img src="/uploads/<%= tari.gambar_banner %>" alt="<%= tari.nama_tari %>" style="max-width: 500px;"></p>
+
+            <button type="submit">Update</button>
+        </form>
+
+        <a href="/admin/tari/list">Kembali ke Daftar Tari</a>
+    </div>
+    
+</body>
+</html>

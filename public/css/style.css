@@ -1,0 +1,1058 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+	box-sizing: border-box;
+}
+
+p {
+	font-weight: 300;
+	color: #111;
+}
+
+.banner {
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: url(../assets/banner1.jpg);
+	background-size: cover;
+}
+
+.banner .content {
+	max-width: 900px;
+	text-align: center;
+}
+
+.banner .content h2 {
+	font-size: 4em;
+	color: #fff;
+}
+
+.banner .content p {
+	font-size: 1em;
+	color: #fff;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 40px 100px;
+	z-index: 1000;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: 0.5s
+}
+
+header.sticky {
+	background: #fff;
+	padding: 10px 100px;
+	box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+header .logo {
+	color: #fff;
+	font-weight: 700;
+	font-size: 2em;
+	text-decoration: none;
+}
+
+header.sticky .logo {
+	color: #111;
+}
+
+header .logo span {
+	color: #D4AC0D;
+}
+
+header .menu-toggle{
+    display: none;
+}
+
+header .navigation {
+	position: relative;
+	display: flex;	
+}
+
+header .navigation li {
+	list-style: none;
+	margin-left: 30px;
+}
+
+
+header .navigation li a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: 300;
+}
+
+header.sticky .navigation li a {
+	color: #111;
+}
+
+header .navigation li a:hover {
+	color: #D4AC0D;
+}
+
+section {
+	padding: 75px;
+}
+
+/* Detection Section */
+.container-deteksi {
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.content-box-deteksi {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Call to action button */
+.cta-btn {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #e6b800;
+}
+
+/* Popup styling */
+.popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    overflow-y: auto;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* Maksimal lebar popup */
+    width: 90%;
+}
+
+#close-popup-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 24px;
+    color: #999;
+    cursor: pointer;
+}
+
+.popup-inner-content {
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.file-upload {
+    display: none; 
+}
+
+.file-upload-label {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #28a745; 
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.file-upload-label:hover {
+    background-color: #D4AC0D;
+}
+
+/* Popup Styling */
+.popup-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Ruang antara tombol */
+    margin-bottom: 20px; /* Spasi di bawah tombol */
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Button Styling */
+.cta-btn {
+    display: inline-block;
+    background-color: #e6b800;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #d4ac0d;
+}
+
+/* Camera Container Styling */
+.image-preview-container {
+    position: relative;
+    width: 100%; 
+    height: 300px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Button Capture Styling */
+#capture-btn {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e6b800;
+    padding: 8px 16px;
+}
+
+#image-preview {
+    display: block; /* Agar margin auto bekerja */
+    max-width: 300px; /* Batas maksimal lebar */
+    width: 100%; /* Sesuaikan lebar hingga max-width */
+    height: auto; /* Sesuaikan tinggi secara proporsional */
+    border-radius: 8px; /* Sudut membulat */
+    margin: 20px auto 0; /* Tengah-kan dan tambahkan jarak atas */
+}
+
+#camera-container {
+    position: relative;
+    z-index: 10; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Result Section */
+#result-box {
+    margin-top: 20px;
+}
+
+#result-box p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Tari Bali Section */
+#tari-bali h1 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2.5em;
+	margin: 0 0 20px 0;
+	color: #D4AC0D;
+}
+
+#tari-bali p {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	margin: 0 auto;
+	color: #111;
+	max-width: 1000px;
+}
+
+.tari-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.tari-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 320px;
+    margin: 10px; 
+	height: 450px;
+	cursor: pointer;
+}
+
+.tari-box:hover {
+    transform: scale(1.05);
+}
+
+
+.tari-box:hover {
+    transform: scale(1.05);
+}
+
+
+.tari-box h3 {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.tari-box p {
+	font-size: 16px;
+	color: #666;
+	margin-bottom: 10px 0; 
+}
+
+.tari-img {
+	width: 100%;
+	height: 50%;
+	border-radius: 8px;
+	margin-bottom: 5px;
+}
+
+/* Styling for the 'Lihat Detail' button */
+.detail-btn {
+	display: inline-block;
+	padding: 10px 20px;
+	margin-top: auto; 
+	margin-bottom: 10px;
+	background-color: gold; 
+	color: black;
+	width: 250px;
+	text-decoration: none;
+	border-radius: 5px;
+	font-weight: semi-bold;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: background-color 0.3s ease, transform 0.3s ease;
+	align-self: center; 
+}
+
+/* Button hover effect */
+.detail-btn:hover {
+	background-color: darkgoldenrod;
+	transform: translateY(-2px);
+}
+
+
+/* DETAIL CONTENT STYLE */
+#banner{
+	padding: 75px 0 0 0;
+}
+
+/* Banner Section */
+.banner-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.banner-img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+/* Gallery Section */
+.gallery-section {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+	padding: 0;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.small-img {
+    width: 192px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Description Section */
+.description-section {
+    text-align: left;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.description-section h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.description-section h4 {
+    font-size: 16px;
+    color: #999;
+}
+
+.description-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.description-section ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.description-section ul li {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.description-text {
+    text-align: justify;    
+    text-indent: 1em;       
+    line-height: 1.6;       
+    margin-bottom: 1em;     
+    font-size: 16px;        
+    color: #333;           
+}
+
+
+/* Admin Section */
+.container-admin {
+    max-width: 1200px;
+    margin: 150px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.container-admin h1 {
+    margin-top: 15px;
+    text-align: center;
+    color: #343a40;
+}
+.admin-features {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.admin-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0 20px 20px 20px;
+    transition: transform 0.2s ease-in-out;
+}
+.admin-card:hover {
+    transform: translateY(-5px);
+}
+.admin-card a {
+    text-decoration: none;
+    color: #e6b800;
+    font-size: 18px;
+    display: block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #D4AC0D;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+.admin-card a:hover {
+    background-color: #D4AC0D;
+}
+
+.container-list h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.container-list {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.container-list .add-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.container-list .add-btn:hover {
+    background-color: #218838;
+}
+
+.container-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container-list table, th, td {
+    border: 1px solid #ddd;
+}
+
+.container-list th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+.container-list th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.container-list td {
+    vertical-align: middle;
+}
+
+.container-list .action-btns{
+    display: flex;
+    gap: 10px;
+}
+
+.container-list .action-btns a, .action-btns form button {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    flex: 1;
+    border: none;
+}
+
+/* Tombol Edit */
+.container-list .edit-btn {
+    background-color: #007bff; 
+    color: white;
+}
+
+.container-list .edit-btn:hover {
+    background-color: #0056b3; 
+}
+
+/* Tombol Detail */
+.container-list .detail-btn {
+    background-color: #e6b800; /* Hijau */
+    color: white;
+}
+
+.container-list .detail-btn:hover {
+    background-color: #D4AC0D; 
+}
+
+/* Tombol Delete */
+.container-list .delete-btn {
+    background-color: #dc3545; 
+    color: white;
+    border: none; 
+}
+
+.container-list .delete-btn:hover {
+    background-color: #c82333; 
+}
+
+
+.container-list .action-btns form {
+    display: inline;
+}
+
+.container-list .action-btns form button {
+    font-family: inherit; 
+    font-size: inherit;
+}
+
+/* footer */
+footer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 30px; /* Padding default lebih kecil untuk mobile */
+    background: #111;
+}
+
+footer .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+footer .sec {
+    margin-right: 30px;
+}
+
+footer .sec.aboutus {
+    width: 80%; /* Default full width untuk mobile */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; /* Pusatkan konten secara horizontal */
+    text-align: center; /* Teks rata tengah */
+}
+
+footer .sec.aboutus h2 {
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+footer .sec.aboutus .profile {
+    display: flex;
+    flex-direction: column; /* Tampilan vertikal untuk mobile */
+    align-items: center;
+    gap: 20px; /* Jarak antar elemen */
+}
+
+footer .sec.aboutus .profile-photo {
+    width: 150px; /* Ukuran lebih kecil untuk mobile */
+    height: 150px;
+    border-radius: 20%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    margin: 0 auto; /* Pusatkan gambar */
+}
+
+footer .sec.aboutus p {
+    color: #999;
+    margin: 15px 0; /* Jarak vertikal */
+    line-height: 1.5; /* Lebih nyaman dibaca */
+}
+
+footer .sec.aboutus .sci {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Pusatkan ikon sosial media */
+    gap: 10px; /* Gunakan gap untuk jarak antar elemen */
+}
+
+footer .sec.aboutus .sci li {
+    list-style: none;
+}
+
+footer .sec.aboutus .sci li a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+footer .sec.aboutus .sci li a:hover {
+    background: #f00;
+}
+
+footer .sec.aboutus .sci li a .fa {
+    color: #fff;
+    font-size: 20px;
+}
+
+
+/* Untuk layar besar (desktop) */
+@media (min-width: 1024px) {
+    .tari-container {
+        grid-template-columns: repeat(4, 1fr); /* 4 kolom di layar besar */
+    }
+}
+
+/* Untuk layar kecil (tablet atau mobile) */
+@media (max-width: 1024px) {
+    .tari-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Kolom sesuai ukuran layar */
+    }
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    header .logo {
+        font-size: 1.5em;
+    }
+
+    header .navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        display: none;
+        padding: 20px 0;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    header.sticky .navigation {
+        box-shadow: none;
+    }
+
+    header .navigation.active {
+        display: flex;
+    }
+
+    header .navigation li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    header .navigation li a {
+        color: #111;
+        font-size: 1em;
+    }
+
+    header.sticky .navigation li a {
+        color: #111;
+    }
+
+    header .menu-toggle {
+        display: block;
+        font-size: 1.8em;
+        color: #fff;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    header.sticky .menu-toggle {
+        color: #111;
+    }
+
+    .banner .content{
+        padding: 0 10px;
+    }
+
+    .banner .content h2 {
+        font-size: 2em; /* Perkecil ukuran font */
+    }
+
+    .banner .content p {
+        font-size: 1em; /* Sesuaikan ukuran font */
+    }
+
+    .content-box-deteksi{
+        width: 100%;
+        padding: 20px;
+    }
+
+    .content-box-deteksi h1 {
+        font-size: 1.5em;
+    }
+
+    .content-box-deteksi p {
+        font-size: 1em;
+    }
+
+    .cta-btn {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+
+    .popup-content {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .popup-content h2 {
+        font-size: 1.5em;
+    }
+
+    .popup-content .subtitle {
+        font-size: 0.9em;
+    }
+
+    #tari-bali h1 {
+        font-size: 2.5rem;
+    }
+
+    #tari-bali p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto 30px;
+    }
+
+    .tari-box {
+        max-width: 280px;
+    }
+
+    /* Adjust Banner Image */
+    .banner-img {
+        border-radius: 0;
+    }
+
+    /* Gallery Section */
+    .small-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* Description Section */
+    .description h1 {
+        font-size: 1.8rem;
+    }
+
+    .description-text, 
+    .description ul li {
+        font-size: 0.95rem;
+    }
+
+    footer .sec.aboutus {
+        width: 50%; 
+        text-align: center; 
+        align-items: flex-start; 
+    }
+
+    footer .sec.aboutus .profile {
+        flex-direction: column; 
+    }
+
+    footer .sec.aboutus .profile-photo {
+        width: 150px; 
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+        /* Header */
+    header {
+        padding: 10px 15px; /* Kurangi padding untuk layar kecil */
+    }
+
+    header .logo {
+        font-size: 1.3em; /* Perkecil ukuran font logo */
+    }
+
+    header .menu-toggle {
+        font-size: 1.6em; /* Perkecil ikon menu */
+    }
+
+    header .navigation {
+        padding: 15px 0; /* Kurangi padding */
+    }
+
+    header .navigation li {
+        margin: 8px 0; /* Kurangi margin antar item */
+    }
+
+    header .navigation li a {
+        font-size: 0.9em; /* Perkecil ukuran font */
+    }
+
+    /* Sticky header adjustments */
+    header.sticky .menu-toggle {
+        color: #111;
+    }
+
+    /* Banner Section */
+    .banner .content {
+        padding: 0 20px;
+    }
+
+    .banner .content h2 {
+        font-size: 1.8em; /* Perkecil ukuran heading */
+    }
+
+    .banner .content p {
+        font-size: 0.9em; /* Sesuaikan ukuran paragraf */
+    }
+
+    /* Content Box Deteksi */
+    .content-box-deteksi h1 {
+        font-size: 1.3em; /* Perkecil ukuran heading */
+    }
+
+    .content-box-deteksi p {
+        font-size: 0.9em; /* Sesuaikan ukuran paragraf */
+    }
+
+    /* Call-to-Action Button */
+    .cta-btn {
+        font-size: 0.8em; /* Perkecil ukuran font */
+        padding: 6px 12px; /* Sesuaikan padding */
+    }
+
+    /* Popup Content */
+    .popup-content {
+        width: 90%; /* Kurangi lebar popup */
+        padding: 10px; /* Kurangi padding */
+    }
+
+    .popup-content h2 {
+        font-size: 1.3em; /* Perkecil heading */
+    }
+
+    .popup-content .subtitle {
+        font-size: 0.8em; /* Perkecil subtitle */
+    }
+
+    #tari-bali {
+        padding: 30px 15px;
+    }
+
+    #tari-bali h1 {
+        font-size: 1.8rem;
+    }
+
+    #tari-bali p {
+        font-size: 0.9rem;
+    }
+
+    .tari-box h3 {
+        font-size: 1.2rem;
+    }
+
+    .tari-box p {
+        font-size: 0.9rem;
+    }
+
+    .tari-box .detail-btn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    /* Banner Section */
+    #banner {
+        padding: 10px 0;
+    }
+
+    .banner-img {
+        border-radius: 0;
+    }
+
+    /* Gallery Section */
+    .gallery {
+        gap: 10px;
+    }
+
+    .small-img {
+        width: 70px;
+        height: 70px;
+    }
+
+    /* Description Section */
+    .description {
+        padding: 10px;
+    }
+
+    .description h1 {
+        font-size: 1.5rem;
+    }
+
+    .description-text,
+    .description ul li {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 20px; /* Padding lebih kecil untuk layar kecil */
+    }
+
+    footer .sec.aboutus .profile-photo {
+        width: 120px; /* Ukuran gambar lebih kecil lagi */
+        height: 120px;
+    }
+
+    footer .sec.aboutus p {
+        font-size: 14px; /* Ukuran teks lebih kecil */
+    }
+
+    footer .sec.aboutus .sci li a {
+        width: 35px;
+        height: 35px;
+    }
+
+    footer .sec.aboutus .sci li a .fa {
+        font-size: 16px; /* Ukuran ikon lebih kecil */
+    }
+}

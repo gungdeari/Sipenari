@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Sipenari </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+	<!-----Header----->
+	<header>
+		<a href="#" class="logo"><span>Sipe</span>nari</a>
+		<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+		<ul class="navigation">
+			<li><a href="#banner"><strong>Home</strong></a></li>
+			<li><a href="#deteksi-tari"><strong>Deteksi Tari</strong></a></li>
+			<li><a href="#tari-bali"><strong>Tari Bali</strong></a></li>
+		</ul>
+	</header>	
+	<!-----end Header------>
+
+
+	<!-----banner----->
+	<section class="banner" id="banner">
+		<div class="content">
+			<h2>Sistem Pengenalan Tari Bali Berbasis AI</h2>
+			<p>Temukan dan identifikasi berbagai tari Bali melalui teknologi kecerdasan buatan yang akurat dan mudah digunakan, semua dalam satu platform.</p>	
+		</div>
+	</section>
+	<!-----end banner---->
+
+    <!-- Detection Section -->
+	<section id="deteksi-tari">
+		<div class="container-deteksi">
+			<div class="content-box-deteksi">
+				<h1>Belajar Mengenal Tari Bali</h1>
+				<p>Jelajahi keunikan pesona budaya Bali melalui teknologi AI yang dirancang khusus untuk kamu. Mulailah perjalanan seru untuk memahami dan mengklasifikasi ragam tari Bali, sambil memperdalam apresiasi terhadap kekayaan budaya yang luar biasa ini.</p>
+				<button id="open-popup-btn" class="cta-btn">Coba Sekarang</button>
+			</div>
+		</div>
+	
+		<!-- Popup -->
+		<div id="popup" class="popup" style="display: none;">
+			<div class="popup-content">
+				<span id="close-popup-btn">&times;</span>
+				<div class="popup-inner-content">
+					<h2>Deteksi Tari Bali</h2>
+					<p class="subtitle">Pilih opsi untuk mendapatkan informasi jenis tari Bali:</p>
+		
+					<!-- Kontainer untuk tombol Unggah dan Ambil Gambar -->
+					<div class="button-container">
+						<button onclick="openUpload()" class="cta-btn">Unggah Gambar</button>
+						<button onclick="openCamera()" class="cta-btn">Ambil Gambar</button>
+					</div>
+		
+					<input type="file" id="file-input" class="file-upload" accept="image/*" style="display:none;" onchange="previewImage(event)">
+					
+					<!-- Preview gambar setelah upload -->
+					<img id="image-preview" src="#" alt="Preview Gambar" style="display: none; max-width: 350px; width: 100%; height: auto; border-radius: 8px; margin: 20px auto 0;">
+
+		
+					<div id="camera-container" class="image-preview-container" style="display: none;">
+						<video id="camera-stream" autoplay style="width: 100%; height: 100%; border-radius: 8px;"></video>
+						<button id="capture-btn" onclick="captureImage()" class="cta-btn" style="position: absolute; bottom: 10px;">Capture</button>
+					</div> 
+		
+					<!-- Tombol Klasifikasi -->
+					<button id="scan-btn" class="cta-btn" onclick="classifyImage()" style="display:none; margin-top: 20px;">Klasifikasi Sekarang</button>
+				
+					<!-- Hasil Klasifikasi -->
+					<div id="result-box" style="display:none; text-align: center; margin-top: 20px;">
+						<p id="result"></p>
+						<a id="telusuri-btn" href="#" class="cta-btn">Telusuri Lebih Jauh</a>
+					</div>
+				</div>
+			</div>
+		</div>									
+	</section>
+
+	<!-- Tari Bali Section -->
+    <section id="tari-bali">
+		<h1>Ragam Tari Bali</h1>
+		<p>Temukan beragam tarian tradisional Bali yang sarat akan nilai seni dan filosofi budaya. Setiap tarian menyimpan cerita, kekhasan gerak, dan keindahan yang memukau, menjadikannya warisan budaya yang tak ternilai.</p>
+		<div class="tari-container">
+			<% tari.forEach(item => { %>
+				<div class="tari-box">
+					<img src="/uploads/<%= item.gambar_banner %>" alt="<%= item.nama_tari %>" class="tari-img">
+					<h3><%= item.nama_tari %></h3>
+					<p><%= item.desc_singkat %></p>
+					<a href="/detail/<%= item.nama_tari %>" class="detail-btn">Lihat Detail</a>
+				</div>
+			<% }) %>
+		</div>
+	</section>	
+
+    <footer>
+		<div class="container">
+			<div class="sec aboutus">
+				<h2>Tentang Saya</h2>
+				<div class="profile">
+					<img src="../assets/profile.jpg" alt="Profile Photo" class="profile-photo">
+					<div>
+						<p>Hai, saya Anak Agung Gede Ari Saputra! Saya sangat tertarik dengan budaya Bali, terutama tarian tradisionalnya. Di platform ini, saya ingin berbagi keindahan dan kekayaan warisan budaya Bali dengan semua orang dengan menggunakan AI untuk mengklasifikasikan beberapa tari Bali. Ayo, terhubung dengan saya di media sosial untuk mengenal saya lebih dekat!
+						</p>
+						<ul class="sci">
+							<li><a href="https://www.facebook.com/gung.ary.399"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+							<li><a href="https://www.instagram.com/gungdeari_/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							<li><a href="https://www.linkedin.com/in/agungarisaputra"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+							<li><a href="https://www.github.com/gungdeari"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>	
+	
+
+	<script type="text/javascript">
+		window.addEventListener('scroll', function(){
+			const header = document.querySelector('header');
+			header.classList.toggle("sticky", window.scrollY > 0);
+		});
+	</script>
+
+
+</body>

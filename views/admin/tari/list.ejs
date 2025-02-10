@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Tari</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+    <div class="container-list">
+        <h1>Daftar Tari Bali</h1>
+
+        <a href="/admin/tari/create" class="add-btn">+ Tambah Data Tari</a>
+
+        <% if (tari.length > 0) { %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Tari</th>
+                        <th>Asal</th>
+                        <th>Jenis</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% tari.forEach((item, index) => { %>
+                        <tr>
+                            <td><%= index + 1 %></td>
+                            <td><%= item.nama_tari %></td>
+                            <td><%= item.asal %></td>
+                            <td><%= item.jenis %></td>
+                            <td class="action-btns">
+                                <a href="/admin/tari/edit/<%= item.id %>" class="edit-btn">Edit</a>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <div class="empty-message">
+                <p>Tidak ada data tari yang tersedia.</p>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Data Tari</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, textarea, select {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            background-color: #6c757d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+    <body>
+        <div class="container">
+            <h1>Tambah Data Tari</h1>
+
+            <a href="/admin/tari/list" class="back-btn">← Kembali ke Daftar Tari</a>
+
+
+            <form action="/admin/tari/store" method="POST" enctype="multipart/form-data">
+                <label for="nama_tari">Nama Tari</label>
+                <input type="text" id="nama_tari" name="nama_tari" required>
+
+                <label for="gambar_banner">Gambar Banner</label>
+                <input type="file" id="gambar_banner" name="gambar_banner" accept="image/*" required>
+
+                <label for="desc_singkat">Deskripsi Singkat</label>
+                <textarea id="desc_singkat" name="desc_singkat" rows="3" required></textarea>
+
+                <label for="desc_lengkap">Deskripsi Lengkap</label>
+                <textarea id="desc_lengkap" name="desc_lengkap" rows="6"></textarea>
+
+                <label for="asal">Asal</label>
+                <input type="text" id="asal" name="asal" required>
+
+                <label for="jenis">Jenis Tari</label>
+                <select id="jenis" name="jenis" required>
+                    <option value="">-- Pilih Jenis Tari --</option>
+                    <option value="Tradisional">Tradisional</option>
+                    <option value="Kreasi Baru">Kreasi Baru</option>
+                    <option value="Sakral">Sakral</option>
+                </select>
+
+                <label for="tokoh_penting">Tokoh Penting (Opsional)</label>
+                <input type="text" id="tokoh_penting" name="tokoh_penting">
+
+                <button type="submit">Simpan Data</button>
+            </form>
+        </div>
+    </body>
+</html>
